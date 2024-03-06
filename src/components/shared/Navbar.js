@@ -9,6 +9,7 @@ import Image from "next/image";
 import { IconButton, Stack } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import Link from "next/link";
+import Header from "./Header";
 
 const navItems = [
     {
@@ -39,34 +40,37 @@ const navItems = [
 
 const Navbar = () => {
     return (
-        <AppBar position="static" className="bg-black">
-            <Container maxWidth="xl">
-                <Toolbar disableGutters>
-                    <Image src={logo} width={100} height={100} alt="Logo" />
-                    <Box className="w-full text-center">
-                        {navItems.map((item) => (
-                            <Link key={item} href={item.pathname}>
-                                <Button className="text-white">{item.route}</Button>
-                            </Link>
-                        ))}
-                    </Box>
-                    <Box>
-                        <Stack
-                            sx={{
-                                "& svg": {
-                                    color: "white",
-                                },
-                            }}
-                            direction="row"
-                        >
-                            <IconButton>
-                                <FacebookIcon />
-                            </IconButton>
-                        </Stack>
-                    </Box>
-                </Toolbar>
-            </Container>
-        </AppBar>
+        <>
+            <Header />
+            <AppBar position="static" className="bg-black">
+                <Container maxWidth="xl">
+                    <Toolbar disableGutters>
+                        <Image src={logo} width={100} height={100} alt="Logo" />
+                        <Box className="w-full text-center">
+                            {navItems.map((item) => (
+                                <Link key={item} href={item.pathname}>
+                                    <Button className="text-white">{item.route}</Button>
+                                </Link>
+                            ))}
+                        </Box>
+                        <Box>
+                            <Stack
+                                sx={{
+                                    "& svg": {
+                                        color: "white",
+                                    },
+                                }}
+                                direction="row"
+                            >
+                                <IconButton>
+                                    <FacebookIcon />
+                                </IconButton>
+                            </Stack>
+                        </Box>
+                    </Toolbar>
+                </Container>
+            </AppBar>
+        </>
     );
 };
 export default Navbar;
