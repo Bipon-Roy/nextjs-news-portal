@@ -43,7 +43,7 @@ const Navbar = () => {
         <>
             <Header />
             <AppBar position="static" className="bg-black">
-                <Container maxWidth="xl">
+                <Container>
                     <Toolbar disableGutters>
                         <Image src={logo} width={100} height={100} alt="Logo" />
                         <Box className="w-full text-center">
