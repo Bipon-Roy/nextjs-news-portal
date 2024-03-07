@@ -53,8 +53,8 @@ const Footer = () => {
                     </IconButton>
                 </Box>
                 <Box className="w-full text-center">
-                    {navItems.map((item) => (
-                        <Link key={item} href={item.pathname}>
+                    {navItems.map((item, idx) => (
+                        <Link key={idx} href={item.pathname}>
                             <Button className="text-white">{item.route}</Button>
                         </Link>
                     ))}

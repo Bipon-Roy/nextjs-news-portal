@@ -47,8 +47,8 @@ const Navbar = () => {
                     <Toolbar disableGutters>
                         <Image src={logo} width={100} height={100} alt="Logo" />
                         <Box className="w-full text-center">
-                            {navItems.map((item) => (
-                                <Link key={item} href={item.pathname}>
+                            {navItems.map((item, idx) => (
+                                <Link key={idx} href={item.pathname}>
                                     <Button className="text-white">{item.route}</Button>
                                 </Link>
                             ))}

@@ -1,13 +1,4 @@
-import {
-    Box,
-    Button,
-    Card,
-    CardActions,
-    CardContent,
-    CardMedia,
-    Grid,
-    Typography,
-} from "@mui/material";
+import { Box, Card, CardContent, CardMedia, Grid, Typography } from "@mui/material";
 import topNews from "@/assets/top-news.png";
 import topNews2 from "@/assets/top-news2.png";
 import Image from "next/image";
@@ -29,10 +20,6 @@ const LatestNews = () => {
                         species, ranging across all continents except Antarctica
                     </Typography>
                 </CardContent>
-                <CardActions>
-                    <Button size="small">Share</Button>
-                    <Button size="small">Learn More</Button>
-                </CardActions>
             </Card>
 
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
@@ -52,10 +39,6 @@ const LatestNews = () => {
                                 species, ranging across all continents except Antarctica
                             </Typography>
                         </CardContent>
-                        <CardActions>
-                            <Button size="small">Share</Button>
-                            <Button size="small">Learn More</Button>
-                        </CardActions>
                     </Card>
                 </Grid>
             </Grid>
