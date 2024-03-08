@@ -6,7 +6,7 @@ const CategoryList = async () => {
     const { data: allCategories } = await getAllCategories();
 
     return (
-        <Box className="mt-5 px-5 py-2">
+        <Box className="my-5">
             <Typography variant="h6">Categories</Typography>
             <Divider />
             <Stack rowGap={1} sx={{ mt: 2 }}>
