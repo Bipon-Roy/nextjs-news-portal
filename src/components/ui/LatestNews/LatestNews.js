@@ -1,48 +1,67 @@
-import { Box, Card, CardContent, CardMedia, Grid, Typography } from "@mui/material";
-import topNews from "@/assets/top-news.png";
-import topNews2 from "@/assets/top-news2.png";
+import { Box, Card, CardActionArea, CardContent, CardMedia, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import { getAllNews } from "@/utils/getAllNews";
 const LatestNews = async () => {
     const { data } = await getAllNews();
+    console.log(data);
     return (
-        <Box>
-            <Card className="my-5">
-                <CardMedia>
-                    <Image src={data[0].thumbnail_url} height={450} width={800} alt="Top News" />
-                </CardMedia>
+        <Box className="my-5">
+            <Card>
+                <CardActionArea>
+                    <CardMedia>
+                        <Image
+                            src={data[0].thumbnail_url}
+                            width={800}
+                            height={500}
+                            alt="top news"
+                        />
+                    </CardMedia>
+                    <CardContent>
+                        <p className="w-[100px] bg-red-500 px-2 text-white my-5 rounded">
+                            {data[0].category}
+                        </p>
+                        <Typography gutterBottom variant="h5" component="div">
+                            {data[0].title}
+                        </Typography>
+                        <Typography gutterBottom className="my-3">
+                            By {data[0].author.name} - {data[0].author.published_date}
+                        </Typography>
 
-                <CardContent>
-                    <p className="max-w-fit bg-red-600 text-white px-1 rounded my-2">Technology</p>
-                    <Typography gutterBottom variant="h5" component="div">
-                        Lizard
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000
-                        species, ranging across all continents except Antarctica
-                    </Typography>
-                </CardContent>
+                        <Typography variant="body2" color="text.secondary">
+                            {data[0].details.length > 200
+                                ? data[0].details.slice(0, 200) + "..."
+                                : data[0].details}
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
             </Card>
 
-            <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                <Grid item xs={6}>
-                    <Card className="my-5">
-                        <CardMedia>
-                            <Image src={topNews2} width={800} alt="Top News" />
-                        </CardMedia>
-
-                        <CardContent>
-                            <p className="max-w-fit bg-red-600 text-white px-1 rounded my-2">
-                                Technology
-                            </p>
-                            <Typography gutterBottom>Lizard</Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                Lizards are a widespread group of squamate reptiles, with over 6,000
-                                species, ranging across all continents except Antarctica
-                            </Typography>
-                        </CardContent>
-                    </Card>
-                </Grid>
+            <Grid className="mt-5" container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+                {data.slice(0, 4).map((news) => (
+                    <Grid key={news._id} item xs={6}>
+                        <Card>
+                            <CardActionArea>
+                                <CardMedia>
+                                    <Image
+                                        src={news.thumbnail_url}
+                                        width={800}
+                                        height={300}
+                                        alt="top news"
+                                    />
+                                </CardMedia>
+                                <CardContent>
+                                    <p className=" w-[100px] bg-red-500 px-2 text-white my-5 rounded">
+                                        {news.category}
+                                    </p>
+                                    <Typography gutterBottom>{news.title}</Typography>
+                                    <Typography gutterBottom className="my-3">
+                                        {news.author.name}
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                    </Grid>
+                ))}
             </Grid>
         </Box>
     );
