@@ -2,7 +2,6 @@ import { getCategoryNews } from "@/utils/getCategoryNews";
 import { Card, CardActionArea, CardContent, CardMedia, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const DynamicNewsPage = async ({ searchParams }) => {
     const { data } = await getCategoryNews(searchParams.category);

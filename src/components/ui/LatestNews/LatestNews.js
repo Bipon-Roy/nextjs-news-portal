@@ -2,12 +2,14 @@ import { Box, Card, CardContent, CardMedia, Grid, Typography } from "@mui/materi
 import topNews from "@/assets/top-news.png";
 import topNews2 from "@/assets/top-news2.png";
 import Image from "next/image";
-const LatestNews = () => {
+import { getAllNews } from "@/utils/getAllNews";
+const LatestNews = async () => {
+    const { data } = await getAllNews();
     return (
         <Box>
             <Card className="my-5">
                 <CardMedia>
-                    <Image src={topNews} width={800} alt="Top News" />
+                    <Image src={data[0].thumbnail_url} height={450} width={800} alt="Top News" />
                 </CardMedia>
 
                 <CardContent>
