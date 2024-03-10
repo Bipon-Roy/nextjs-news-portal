@@ -43,9 +43,10 @@ const LatestNews = async () => {
                             <CardActionArea>
                                 <CardMedia>
                                     <Image
+                                        className="w-full h-60"
                                         src={news.thumbnail_url}
-                                        width={800}
-                                        height={300}
+                                        width={400}
+                                        height={400}
                                         alt="top news"
                                     />
                                 </CardMedia>

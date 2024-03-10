@@ -1,29 +1,59 @@
-import { Box, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
+import {
+    Box,
+    Card,
+    CardActionArea,
+    CardContent,
+    CardMedia,
+    Typography,
+    Stack,
+    Divider,
+} from "@mui/material";
 import Image from "next/image";
-import sideNews from "@/assets/side-top-news.png";
+import sideBarNews from "@/assets/side-top-news.png";
+import sideBottomNews from "@/assets/side-bottom-img.png";
+import SidebarNewsCard from "./SideBarNewsCard";
+
 const SideBar = () => {
     return (
         <Box className="my-5">
             <Card>
-                <CardMedia>
-                    <Image src={sideNews} width={800} alt="Top News" />
-                </CardMedia>
+                <CardActionArea>
+                    <CardMedia>
+                        <Image src={sideBarNews} height={400} width={800} alt="top news" />
+                    </CardMedia>
+                    <CardContent>
+                        <p className="w-[100px] bg-red-500 px-2 text-white my-5 rounded">
+                            Technology
+                        </p>
+                        <Typography gutterBottom variant="h5" component="div">
+                            Bitcoin Climbs as Elon Musk Says Tesla Likely to Accept it Again
+                        </Typography>
+                        <Typography gutterBottom className="my-3">
+                            By Bipon - Mar 18 2023
+                        </Typography>
 
-                <CardContent>
-                    <p className="max-w-fit bg-red-600 text-white px-1 rounded my-2">Technology</p>
-                    <Typography gutterBottom variant="h5" component="div">
-                        Lizard
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000
-                        species, ranging across all continents except Antarctica
-                    </Typography>
-                </CardContent>
-                {/* <CardActions>
-                    <Button size="small">Share</Button>
-                    <Button size="small">Learn More</Button>
-                </CardActions> */}
+                        <Typography variant="body2" color="text.secondary">
+                            It is a long established fact that a reader will be distracted by the
+                            readable content of a page when looking at its layout........
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
             </Card>
+            <Divider />
+
+            <Stack my={3} columnGap={2}>
+                <SidebarNewsCard />
+                <SidebarNewsCard />
+                <SidebarNewsCard />
+                <SidebarNewsCard />
+                <SidebarNewsCard />
+                <SidebarNewsCard />
+                <SidebarNewsCard />
+            </Stack>
+
+            <Box>
+                <Image src={sideBottomNews} height={400} width={350} alt="rectangle world image" />
+            </Box>
         </Box>
     );
 };
