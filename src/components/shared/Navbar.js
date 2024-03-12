@@ -78,7 +78,7 @@ const Navbar = () => {
         <>
             <Header />
             <AppBar position="static" className="bg-black ">
-                <Container>
+                <Container className="relative">
                     <Toolbar disableGutters>
                         <Image src={logo} width={100} height={100} alt="Logo" />
                         <Box className="hidden lg:block w-full text-center">
@@ -104,7 +104,7 @@ const Navbar = () => {
                         </Box>
                         <Box>
                             <IconButton
-                                className="block lg:hidden"
+                                className="absolute bottom-2 right-2 lg:hidden "
                                 onClick={toggleDrawer("right", true)}
                                 edge="start"
                                 color="inherit"
