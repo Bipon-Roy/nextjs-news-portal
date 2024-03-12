@@ -38,10 +38,10 @@ const LatestNews = async () => {
 
             <Grid className="mt-5" container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                 {data.slice(0, 4).map((news) => (
-                    <Grid key={news._id} item xs={6}>
-                        <Card>
+                    <Grid key={news._id} item xs={12} sm={6} md={6}>
+                        <Card style={{ height: "100%" }}>
                             <CardActionArea>
-                                <CardMedia>
+                                <CardMedia style={{ height: "100%" }}>
                                     <Image
                                         className="w-full h-60"
                                         src={news.thumbnail_url}

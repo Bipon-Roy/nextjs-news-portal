@@ -41,7 +41,7 @@ const SideBar = () => {
             </Card>
             <Divider />
 
-            <Stack my={3} columnGap={2}>
+            <Stack my={2} columnGap={2}>
                 <SidebarNewsCard />
                 <SidebarNewsCard />
                 <SidebarNewsCard />
