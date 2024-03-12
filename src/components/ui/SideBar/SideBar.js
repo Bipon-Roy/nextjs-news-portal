@@ -18,8 +18,8 @@ const SideBar = () => {
         <Box className="my-5 mx-4 lg:mx-0">
             <Card>
                 <CardActionArea>
-                    <CardMedia>
-                        <Image src={sideBarNews} height={400} width={800} alt="top news" />
+                    <CardMedia className="h-[170px]">
+                        <Image src={sideBarNews} height={300} width={500} alt="top news" />
                     </CardMedia>
                     <CardContent>
                         <p className="w-[100px] bg-red-500 px-2 text-white my-5 rounded">
