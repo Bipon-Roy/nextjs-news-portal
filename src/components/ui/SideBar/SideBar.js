@@ -15,7 +15,7 @@ import SidebarNewsCard from "./SideBarNewsCard";
 
 const SideBar = () => {
     return (
-        <Box className="my-5">
+        <Box className="my-5 mx-4 lg:mx-0">
             <Card>
                 <CardActionArea>
                     <CardMedia>

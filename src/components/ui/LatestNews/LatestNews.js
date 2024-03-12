@@ -5,7 +5,7 @@ const LatestNews = async () => {
     const { data } = await getAllNews();
     console.log(data);
     return (
-        <Box className="my-5">
+        <Box className="my-5 mx-4 lg:mx-0">
             <Card>
                 <CardActionArea>
                     <CardMedia>
