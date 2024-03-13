@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const DynamicNewsPage = async ({ searchParams }) => {
     const { data } = await getCategoryNews(searchParams.category);
-    console.log(data);
+
     return (
         <div className="my-5">
             <h1 className="font-semibold capitalize text-lg">
@@ -13,7 +13,7 @@ const DynamicNewsPage = async ({ searchParams }) => {
             </h1>
             <Grid className="mt-3" container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                 {data.map((news) => (
-                    <Grid key={news.id} item xs={6}>
+                    <Grid key={news.id} item xs={12} md={6}>
                         <Link href={`/${news.category}/${news._id}`}>
                             <Card>
                                 <CardActionArea>
